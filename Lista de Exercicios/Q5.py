@@ -29,8 +29,10 @@ if area_quadrado > area_trapezio and area_quadrado > area_triangulo:
     print('Area do quadrado é a maior')
 elif area_triangulo > area_quadrado and area_triangulo > area_trapezio:
     print('Area do triangulo é a maior')
-else:
+elif area_trapezio > area_quadrado and area_trapezio > area_triangulo:
     print('Area do trapezio é a maior')
+else:
+    print('Existem duas pelo menos duas figuras com areas iguais')
     
 # forma alternativa
 maior = max(area_quadrado,area_trapezio,area_triangulo)
@@ -41,14 +43,7 @@ elif maior == area_triangulo:
 else:
     print('Area do trapezio é a maior')
     
-# forma alternativa 2
 
-if area_quadrado > area_triangulo > area_trapezio:
-    print('Area do quadrado é a maior')
-elif area_triangulo > area_quadrado > area_trapezio:
-    print('Area do triangulo é a maior')
-else:
-    print('Area do trapezio é a maior')
     
     
     
