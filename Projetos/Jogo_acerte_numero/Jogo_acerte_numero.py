@@ -12,10 +12,11 @@ while True:
         break
     else:
         print(f'Voce errou , continue tentando')
-        print(f'Numero de jogadas = {numero_jogadas}')
         if segredo > numero:
             print(f'numero é maior que {numero}')
         else:
             print(f'numero é menor que {numero}')
+
+        print(f'Numero de jogadas = {numero_jogadas}')
 
 print('Bye Bye')
