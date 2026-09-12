@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 
-sg.theme('Material 2')
+sg.theme('Reddit')
 # All the stuff inside your window.
 layout = [  [sg.Text("Bom dia, qual seu nome?",enable_events=True )],
             [sg.InputText(key='-NOME-')],
