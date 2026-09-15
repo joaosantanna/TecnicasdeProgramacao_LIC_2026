@@ -6,7 +6,7 @@ subpasta = "imagem"
 nome_arquivo = "temperatura.png"
 caminho_completo = diretorio_base / subpasta / nome_arquivo
 
-sg.theme('Reddit')
+#sg.theme('Reddit')
 
 # All the stuff inside your window.
 layout = [
