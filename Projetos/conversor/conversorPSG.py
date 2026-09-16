@@ -1,36 +1,40 @@
 import PySimpleGUI as sg
 
 
-# sg.theme('LightGrey')
-sg.theme('LightBlue')
-#sg.theme('Reddit')
-# sg.theme('Material1')
+sg.theme('Reddit')
+
 # Define the layout
 layout = [
-    [sg.Push(), sg.Text('Milhas para Kilometros', font='Calibre, 24'), sg.Push()],
-    [sg.Push(), sg.Input( key='milhas', size=(10, 4), font='Calibre, 12'),
-     sg.Button('Converter', font='Calibre, 12'), sg.Push()],
-    [sg.Push(), sg.Text(key='output', font='Calibre, 18'), sg.Push()]
+    [sg.Push(), sg.Text('Conversor', font='Calibre, 24'), sg.Push()],
+    [sg.Text('Milhas para Kilometros'), sg.Input( key='-MILHAS-', size=(5,1)), sg.Text(key='-MILHA_KM-')],
+    [sg.Text('Decimal para Binario'), sg.Input( key='-DECIMAL-', size=(5,1)), sg.Text(key='-DECIMAL_BINARIO-')],
+    [sg.Push(),sg.Button('Converter', font='Calibre, 12'), sg.Push()]
 ]
 
 # Create the window
 
-window = sg.Window('Milhas para Kilometros', layout, size=(400, 150))
+janela = sg.Window('Conversor de medidas', layout, size=(400, 150))
 
 # Event loop
 
 while True:
-    event, values = window.read()
+    event, values = janela.read()
 
     if event == sg.WINDOW_CLOSED:
         break
     elif event == 'Converter':
-        try:
-            milhas = float(values['milhas'])
+        if values['-MILHAS-'] != '':
+            milhas = float(values['-MILHAS-'])
             kilometros = milhas * 1.61
-            window['output'].update(f'{kilometros:.2f} Km')
-            window['milhas'].update('')
-        except ValueError:
-            pass
+            janela['-MILHA_KM-'].update(f'{kilometros:.2f} Km')
+        
+        if values['-DECIMAL-'] != '':
+            decimal = int(values['-DECIMAL-'])
+            binario = bin(decimal)
+            binario = str(binario)
+            binario = binario[2:]
+            janela['-DECIMAL_BINARIO-'].update(f'{binario}')
+            
+        
 
-window.close()
+janela.close()
